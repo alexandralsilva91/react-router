@@ -45,10 +45,7 @@ function CountryPage() {
                 <CountryCard pais={country}>
                     <Button>Sou um botão children deste Card</Button>
                     <Button>Outro botão children (teste) Voltar!</Button>
-                    <CoinOfTheCard size="big">
-                        {Object.keys(country.currencies)[0]}
-                    </CoinOfTheCard>
-                    <CoinOfTheCard size="small">
+                    <CoinOfTheCard size="medium">
                         {Object.keys(country.currencies)[0]}
                     </CoinOfTheCard>
                 </CountryCard>

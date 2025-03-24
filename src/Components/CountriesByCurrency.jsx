@@ -16,8 +16,8 @@ function CountriesByCurrency({ currency = 'eur' }) {
 
     return (
         <>
-            <h2 className="countrylist-subtitle">Countries with the currency: {currency}</h2>
-            <div className="countries-grid">
+            <h2 className="countrylist-subtitle">Other countries with the currency {currency}</h2>
+            <div className="grid">
                 {countries && countries.map((country) => (
                     <SimpleCountryCard key={country.name.common} country={country} />
                 ))}
