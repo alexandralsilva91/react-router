@@ -2,7 +2,7 @@ import { useParams } from "react-router";
 import { useEffect, useState } from "react";
 import CountryCard from "./CountryCard";
 import Button from "./Button/Button";
-import Currency from "./Currency";
+import CountriesByCurrency from "./CountriesByCurrency";
 import CoinOfTheCard from "./CoinOfTheCard";
 
 function CountryPage() {
@@ -14,10 +14,6 @@ function CountryPage() {
 
     const [country, setCountry] = useState();
     const [loading, setLoading] = useState(true);
-    const [sameCurrenciesCountries, setSameCurrenciesCountries] = useState();
-
-    console.log('gaveta country', country);
-    console.log();
 
     const fetchCountry = async () => {
         try {
@@ -41,7 +37,7 @@ function CountryPage() {
 
     useEffect(() => {
         fetchCountry()
-    }, [])
+    }, [])               /* Este useEffect tem dependência vazia por isso só vai correr uma vez, após renderização do que vem no return */
 
     return (
         country ?
@@ -56,10 +52,9 @@ function CountryPage() {
                         {Object.keys(country.currencies)[0]}
                     </CoinOfTheCard>
                 </CountryCard>
-                <Currency>
-                    <h2>Countries with the same currency</h2>
-                </Currency>
-            </>) : 'sem dados'
+                <CountriesByCurrency currency={Object.keys(country.currencies)[0]} />
+            </>)
+            : 'sem dados'
     )
 }
 

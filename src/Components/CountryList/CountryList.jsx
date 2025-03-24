@@ -37,7 +37,7 @@ export default function CountriesList({ moeda }) {
 
     return (
         <div className="container">
-            <h1 className="title">🌍 Lista de Países</h1>
+            <h1 className="title">Country List</h1>
 
             {/* Campo de Pesquisa */}
             <input
